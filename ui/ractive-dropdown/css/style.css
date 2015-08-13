@@ -1,0 +1,42 @@
+/* Variables */
+/* Improving fonts using Google Fonts */
+/* Styling the dropdown */
+.dropdown {
+  max-width: 300px;
+  border: 1px solid #00a3ad;
+  border-radius: 5px;
+}
+.dropdown .label {
+  display: block;
+  padding: 10px;
+  outline: none;
+}
+.dropdown ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  display: none;
+}
+.dropdown ul * {
+  outline: none;
+}
+.dropdown ul li {
+  padding: 10px 0;
+  color: #00a3ad;
+  position: relative;
+  font-weight: bold;
+}
+.dropdown ul li.active {
+  color: #00737a;
+}
+.dropdown ul li.active:before {
+  position: absolute;
+  color: #00a3ad;
+  right: 0;
+  content: '\2770';
+  font-size: 12px;
+}
+.dropdown.opened ul {
+  display: block;
+}

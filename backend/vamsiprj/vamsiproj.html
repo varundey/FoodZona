@@ -1,0 +1,65 @@
+<html>
+<head>
+<title> DEPARTMENTAL STORE </title>
+</head>
+<body>
+<center>
+<h1> WELCOME TO OUR DEPARTMENTAL STORE </h1>
+</center>
+<h3>
+<center>
+<i> How May I Help You? </i>
+</center>
+</h3>
+<form action="http://127.0.0.1/vamsiprj/vamsiproj2.html" id="myform" onsubmit="return(validateForm())" >
+<center>
+<b>
+Customer ID:<input name="Customer ID" value="" size="10"><br>
+Password:<input type="password" name="password" value="" size="10"><br>
+</b>
+<input type="submit" value="Submit">
+<input type="reset">
+</center>
+
+</form>
+
+<?php
+session_start();
+$_SESSION['total'] = 0;
+echo "HIIIIIII";
+?>
+<script type="text/javascript">
+<!--
+// Form validation code will come here.
+function validateForm()
+{
+ 
+   if(Customer ID.value == "" )
+   {
+     window.alert("Please enter your ID !");
+    Customer ID.focus();
+    return false;
+   }
+   if(password.value == "" )
+   {
+     window.alert("Please enter your password:");
+    password.focus();
+    return false;
+   }
+   return true;
+}
+//-->
+</script>
+
+
+ 
+
+<body background="v2.jpg">
+</body>
+</html>
+
+
+
+
+
+

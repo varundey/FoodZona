@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Ractive Dropdown</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div id='container'></div>
+<script id='template' type='text/ractive'>
+  <div class="dropdown {{ isOpened ? 'opened' : '' }}">
+    <span class="label" on-enter="selectItem" on-tap="selectItem" on-uparrow="moveUp" on-downarrow="moveDown" tabindex="0">{{ selectedText }}</span>
+    <ul>
+      {{#each items: i}}
+      <li tabindex="0" on-tap="selectItem:{{i}}" class="{{ (selectedIndex == i) ? 'active' : '' }}">{{.}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</script>
+    <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+<script src='https://rawgit.com/ractivejs/ractive-events-keys/master/dist/ractive-events-keys.min.js'></script>
+<script src='https://rawgit.com/ractivejs/ractive-events-tap/master/dist/ractive-events-tap.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
