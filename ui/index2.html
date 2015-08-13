@@ -3,34 +3,75 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
         <script>
             $(document).ready(function(){
 		$('.navbar-form').hide();
-                $('.dropdown-menu a').on('click', function(){    
-		    $('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>'); 
-		    $('.navbar-form').show();   
+                $('.signreg').hide();
+                $('.signin').on('click', function(){
+                    $('.signreg').toggle("slide");
+                });
+                var count=0;
+                $('.dropdown-menu a').on('click', function(){
+                    if (count==0){
+                        $('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>');
+                        $('.navbar-form').toggle("slide");   
+                        count+=1
+                    }
 		});
             });
         </script>
+        <style>
+            .red > li > a:hover{
+                background-color: red;
+            }
+            .signreg{
+                position: absolute;
+            }
+        </style>
 </head>
-
-<body style="background-color: #0082D1    ">
+<body style="background-color: #0082D1">
 <!--Top fixed nav bar starts-->
 <div id="navbar">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
             <div class="navbar-header" >
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">fdgfdggfdgfdfgdgfd</span>
+                    <span class="icon-bar">About</span>
+                    <span class="icon-bar">Contact us</span>
                 </button>
                 <a class="navbar-brand" href="#">FoodZona</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Sign In</a></li>
+                    <li id="signin"><a href="#">Sign In</a>
+                       <!-- sign in/register starts -->
+                        <ul>   
+                            <div class="signreg">
+                                <ul class="nav nav-tabs">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Sign IN</a></li>
+                                                <li><a href="#">Sign UP</a></li>
+                                            </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Seller</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Sign IN</a></li>
+                                            <li><a href="#">Sign UP</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </ul>
+                    </li>
+                       <!-- sign in/register ends -->
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -40,10 +81,13 @@
                         </ul>
                     </li>
                     <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
+                        <div class="form-group input-group">
                             <input type="text" class="form-control" placeholder="Pincode">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        
                     </form>
                 </ul>
             </div>
@@ -51,6 +95,7 @@
 </nav>
 </div>
 <!--Top fixed nav bar ends-->
+                <!-- container div starts  -->
 <div class="container">
     <div class="row">
         <div class="col-md-2 col-lg-1"></div>
@@ -62,8 +107,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-lg-1"></div>
-            <div class="col-md-10 col-lg-10" >
-                <ul class="nav nav-pills nav-stacked"  >
+            <div  class="col-md-10 col-lg-10">
+                <ul class="nav nav-pills nav-stacked red"  >
                     <li><a href="#"><p><h3 style="color: fff">Punjabi Dhaba</h3></p></a></li>
                     <li><a href="#"><p><h3 style="color: fff">Queen's Court</h3></p></a></li>
                     <li><a href="#"><p><h3 style="color: fff">Delicious</h3></p></a></li>
@@ -84,6 +129,9 @@
     </div>
 
                         <!--foodcorners Vertical Pills ends-->
-
-    </div>
+</div>
+                <!--Container div ends-->
+                
+                
+               
 </body>
