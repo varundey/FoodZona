@@ -60,11 +60,11 @@ margin-top: -(dialogheight/2);
         <!--Select state ends-->
             <br><br>
         <!-- Pin Code-->
-            <div class="form-group" action="foodcorner.html" id="pincode" name="pcode" method="post">
+            <div class="form-group" id="pincode">
                 <label>Where you at?</label>
                 <input type="text" class="form-control" id="pincode" placeholder="Pincode">
                 <br><br>
-                <button type="submit" "location='foodcorner.html'" class="btn btn-danger">I'm hungry!</button>
+                <button type="button" class="btn btn-danger">I'm hungry!</button>
             </div>
             <!-- Pin Code ends-->
         </div>
