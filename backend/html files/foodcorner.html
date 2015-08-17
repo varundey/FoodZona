@@ -1,0 +1,60 @@
+
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script type="text/javascript" src="http://localhost/food/jquery-2.1.3.js"></script>
+<head>
+
+<body>
+<p>We Found following Foodcorners at your location </p>
+<p id="loc"></p>
+<table class="table table-hover" style="margin-top:100px; margin-left:100px; margin-bottom:100px;">
+    <thead>
+      <tr>
+        <th>FoodCorner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="1">Punjabi Dhaba</td>
+      </tr>
+      <tr>
+        <td id="2">Delicious</td>
+    
+      </tr>
+    </tbody>
+  </table>
+
+<script>
+function abc(a)
+{
+	var d={"a":a};
+	$.ajax({
+	url: "http://localhost/cgi-bin/retrieval.py",
+	data: d,
+	type: "POST",
+	success: function(data)
+	{
+		localStorage.setItem("det",data)
+		location.href="http://localhost/food/punjabidhaba.html"
+	}
+	});
+	event.preventDefault();
+}
+$(document).ready(function(){
+ 	var l=String(localStorage.getItem("loc"))
+	$("#loc").append("<h1><b>"+l+"</b></h1>")
+	localStorage.removeItem("loc")
+	$("#1").on("click",function()
+	{
+		abc(1)
+	});
+	$("#2").on("click",function()
+	{
+		abc(2)
+	});
+});
+
+</script>
+
+
+<body>
