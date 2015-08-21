@@ -52,12 +52,49 @@ input[type=submit]:hover {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li id="about" data-toggle="modal" data-target="#aboutModal"><a href="#">About</a></li>
+        
+         
+        <!-- Modal about -->
+  <div class="modal fade" id="aboutModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <p>We connect your desired food from your favourite foodcorner to your doorstep</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+         <!--Modal about ends-->
+        
+        <li id="contact" data-toggle="modal" data-target="#myModal"><a href="#">Contact</a></li>
+         
+        <!-- Modal contact -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <p>For any query, please write a mail to query@foodzona.com</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+         <!--Modal contact ends-->
+         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="signin.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="signin.html"><span class="glyphicon glyphicon-log-in"></span>Sign In</a></li>
       </ul>
     </div>
   </div>
@@ -75,10 +112,10 @@ input[type=submit]:hover {
         <div class="col-lg-4" >
             
             <div class="btn-group">
-                <button type="button" class="form-control btn btn-success dropdown-toggle" data-toggle="dropdown">
+                <button type="button" class="form-control btn btn-success dropdown-toggle state cstate" data-toggle="dropdown">
                     Select your state <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu state" role="menu">
                     <li><a href="#">West Bengal</a></li>
                 </ul>
             </div>
@@ -86,13 +123,17 @@ input[type=submit]:hover {
         </div>
         <form id="form" role="form">
         <div class="col-lg-4 form-group" >
-        
-        
-      <input type="text" placeholder="Enter your area" class="form-control" id="area">
-        
+            <div class="btn-group">
+                <button type="button" class="form-control btn btn-success dropdown-toggle area carea" data-toggle="dropdown">
+                    Select your area <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu area" role="menu">
+                    <li id="pincode"><a href="#">IIT Kharagpur</a></li>
+                </ul>
+            </div>
         </div>
         <div class="col-lg-4"> 
-            <input type="submit" id="submitpin" value="I'm Hungry!">
+            <input type="submit" id="submitpin" value="I'm Hungry!" id="hungry">
         </div>   
     </div>
 </form>
@@ -114,18 +155,30 @@ function abc()
 }
 $(document).ready(function(){
 	$("#submitpin").on("click",abc);
+       
 });
 </script>
 
     <script>
     var count=0;
-    	$('.dropdown-menu a').on('click', function(){    
+    	$('.state a').on('click', function(){    
     	count+=1
     	if (count==1){
-		    $('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>'); 
+		    $('.cstate').html($(this).html() + '<span class="caret"></span>'); 
 		    $('#form').toggle("slide");   
 		    };
 		})
     </script>
+    <script>
+    var c=0;
+    	$('.area a').on('click', function(){    
+    	c+=1
+    	if (c==1){
+		    $('.carea').html($(this).html() + '<span class="caret"></span>'); 
+                    $('#hungry').toggle("slide");
+		    };
+		})
+    </script>
+    
     
 </body>
