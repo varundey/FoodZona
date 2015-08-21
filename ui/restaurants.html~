@@ -136,13 +136,13 @@
 {
 	var d={"a":a};
 	$.ajax({
-	url: "http://foodzona.com/cgi-bin/retrieval.py",
+	url: "http://localhost/cgi-bin/retrieval.py",
 	data: d,
 	type: "POST",
 	success: function(data)
 	{
 		localStorage.setItem("det",data)
-		location.href="http://foodzona.com/checkout.html"
+		location.href="http://localhost/checkout.html"
 	}
 	});
 	event.preventDefault();

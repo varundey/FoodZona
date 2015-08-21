@@ -9,7 +9,7 @@ p=fs.getvalue("p")
 try:
 	db=MySQLdb.connect("localhost","username","password","food")
 	cursor=db.cursor()
-	sql="SELECT `area` from pincode where pincode='%d';"%(int(p))
+	sql="SELECT `area` from row where input='%s';"%(str(p))
 	cursor.execute(sql)
 	ans=cursor.fetchone()
 	print ans[0]

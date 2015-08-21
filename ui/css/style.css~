@@ -84,7 +84,6 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   margin-bottom: 10px;
 }
 .u-form-group input[type="email"],
-.u-form-group input[type="text"],
 .u-form-group input[type="password"]{
   width: calc(50% - 22px);
   height:45px;
